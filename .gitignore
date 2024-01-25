@@ -1,0 +1,26 @@
+# Ignora i file di sistema di Mac OS
+.DS_Store
+
+# Ignora i file di backup di Mac OS
+*.swp
+*~
+*.bak
+
+# Ignora i file di backup di Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignora i file di cache di Windows
+$RECYCLE.BIN/
+
+# Ignora i file di cache di Linux
+*.log
+
+# Ignora i file di cache di poetry
+__pycache__/
+
+# IDE
+.idea/
+.vscode/
+.vs/

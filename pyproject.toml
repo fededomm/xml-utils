@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "xml-utils"
+version = "0.1.0"
+description = ""
+authors = ["fededomm <fededomm@outlook.it>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+bs4 = "^0.0.2"
+lxml = "^5.1.0"
+typer = {extras = ["all"], version = "^0.9.0"}
+
+[tool.poetry.scripts]
+xml-utils = "xml_utils.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
