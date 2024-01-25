@@ -11,7 +11,7 @@ Esempio:
     <Child>...</Child>
 </Parent>
 
-Restituisce il numero di tag figli supeflui (in questo caso 1)
+Restituisce il numero di tag figli supeflui (in questo caso tutti quelli maggiori di 1)
 """
 def count_multiple_field_from_parent(file_path, parent_tag, child_tag) -> int:
     with open(file_path, 'r') as file:
