@@ -1,6 +1,6 @@
 import sys
 from bs4 import BeautifulSoup
-from xml_utils import file_reader
+from utils import file_reader
 
 """
 Conta il numero di tag figli con lo stesso nome all'interno di un tag padre
