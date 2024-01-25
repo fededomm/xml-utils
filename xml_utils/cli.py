@@ -10,7 +10,6 @@ def cmf(path: str, parent_tag: str, child_tag: str):
     """
     cmf = count_m_field.count_multiple_field_from_parent(path, parent_tag, child_tag)
     print(f"Numero di tag figli con lo stesso nome maggiori di 1: {cmf}")
-    
 
 @app.command()
 def ccf(path: str, parent_tag: str, child_tag: str):
