@@ -1,5 +1,5 @@
 import typer
-from xml_utils import count_c_field, count_m_field, vers
+from xml_utils import count_c_field, count_m_field, vers, xpath
 
 app = typer.Typer()
 
@@ -10,8 +10,10 @@ def cmf(path: str, parent_tag: str, child_tag: str, num_of_requested_child: int)
     """
     cmf = count_m_field.count_multiple_field_from_parent(path, parent_tag, child_tag, num_of_requested_child)
     cef = count_m_field.count_multiple_fields_from_parent_euals_to(path, parent_tag, child_tag, num_of_requested_child)
+    xml_path = xpath.print_xpath(path, child_tag)
     print(f"Numero di tag figli con lo stesso nome maggiori di {num_of_requested_child}: {cmf}")
     print(f"Numero di tag figli con lo stesso nome uguali a {num_of_requested_child}: {cef}")
+    print(f"Xpath: {xml_path}")
 
 @app.command()
 def ccf(path: str, parent_tag: str, child_tag: str):
