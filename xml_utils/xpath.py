@@ -1,5 +1,8 @@
-from bs4 import BeautifulSoup, Tag
-from utils import file_reader
+from bs4 import BeautifulSoup
+from utils.file_reader import open_file
+from utils.write_file import append_to_file
+from utils.write_file import write_to_file
+
 
 def get_xpath(element):
     components = []
@@ -14,9 +17,19 @@ def get_xpath(element):
     return '/'+('/'.join(components))
 
 def print_xpath(file_path, tag):
-    content = file_reader.open_file(file_path)
+    content = open_file(file_path)
     soup = BeautifulSoup(content, 'xml')
     elements = soup.find_all(tag)
     for element in elements:
         print(get_xpath(element))
+
+def print_xpath_to_file(file_path, tag, output_file):
+    content = open_file(file_path)
+    soup = BeautifulSoup(content, 'xml')
+    elements = soup.find_all(tag)
+    write_to_file(output_file,"xpath" + "\n\n")
+    for element in elements:
+        xpath = get_xpath(element)
+        append_to_file(output_file, xpath + "\n")
+
 

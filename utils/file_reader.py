@@ -17,4 +17,7 @@ def open_file(path: str) -> str:
     except Exception as e:
         print(f"Errore generico: {e}")
         sys.exit(1)
+    except EOFError as eof:
+        print(f"Errore EOF: {eof}")
+        sys.exit(1)
     return content
