@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from utils.timestamp import current_time
 from utils.file_reader import open_file
 from utils.write_file import append_to_file
 from utils.write_file import write_to_file
@@ -27,7 +28,8 @@ def print_xpath_to_file(file_path, tag, output_file):
     content = open_file(file_path)
     soup = BeautifulSoup(content, 'xml')
     elements = soup.find_all(tag)
-    write_to_file(output_file,"xpath" + "\n\n")
+    now = current_time()
+    write_to_file(output_file,"xpath - "+ now + "\n\n")
     for element in elements:
         xpath = get_xpath(element)
         append_to_file(output_file, xpath + "\n")

@@ -1,4 +1,4 @@
-from xml_utils import cli
+from xml_utils.cli import app
 
 def main():
-    cli.app()
+    app()
